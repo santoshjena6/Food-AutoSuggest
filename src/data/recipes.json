@@ -91,7 +91,7 @@
         "cuisine": "Chinese",
         "cookTime": 15,
         "rating": 4.7,
-        "image": "/images/fried-rice.png",
+        "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&q=80&w=800",
         "prepTime": "15 mins",
         "difficulty": "Easy",
         "nutrition": {
@@ -171,7 +171,7 @@
         "cuisine": "Continental",
         "cookTime": 10,
         "rating": 4.5,
-        "image": "/images/fruit-nut-granola.png",
+        "image": "https://images.unsplash.com/photo-1494597564530-8922573d7ec7?auto=format&fit=crop&q=80&w=800",
         "prepTime": "10 mins",
         "difficulty": "Easy",
         "nutrition": {
@@ -247,7 +247,7 @@
         "cuisine": "Indian",
         "cookTime": 15,
         "rating": 4.8,
-        "image": "https://images.unsplash.com/photo-1632733711679-52923bc96939?auto=format&fit=crop&q=80&w=800",
+        "image": "https://images.unsplash.com/photo-1589302168068-144664d93dc0?auto=format&fit=crop&q=80&w=800",
         "prepTime": "15 mins",
         "difficulty": "Easy",
         "nutrition": {
@@ -460,7 +460,7 @@
         "cuisine": "Continental",
         "cookTime": 15,
         "rating": 4.5,
-        "image": "https://images.unsplash.com/photo-1541288097308-7b8842a8e9b0?auto=format&fit=crop&q=80&w=800",
+        "image": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&q=80&w=800",
         "prepTime": "15 mins",
         "difficulty": "Easy",
         "nutrition": {
@@ -725,7 +725,7 @@
         "cuisine": "Continental",
         "cookTime": 10,
         "rating": 4.5,
-        "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=800",
+        "image": "https://images.unsplash.com/photo-1504309325026-c73362174092?auto=format&fit=crop&q=80&w=800",
         "prepTime": "10 mins",
         "difficulty": "Easy",
         "nutrition": {
@@ -798,7 +798,7 @@
         "reviews": [
             {
                 "name": "Sunita",
-                "comment": "Restaurant quality at home.",
+                "comment": "Healthy and delicious.",
                 "rating": 5
             }
         ]

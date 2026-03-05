@@ -30,7 +30,7 @@ const dishes: Dish[] = [
         name: "Fried Rice",
         description: "Fragrant jasmine rice tossed with fresh greens and savory soy sauce.",
         rating: 4.7,
-        image: "/images/fried-rice.png"
+        image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&q=80&w=800"
     },
     {
         id: 4,

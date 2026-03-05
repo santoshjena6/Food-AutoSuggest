@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, LayoutGrid, ChevronRight, Clock } from 'lucide-react';
+import { Search, ChevronRight, Clock } from 'lucide-react';
 import recipesData from '../data/recipes.json';
-import StarRating from './StarRating';
 import RecipeDetails from './RecipeDetails';
 
 interface Recipe {
@@ -87,8 +86,6 @@ const SearchRecipes: React.FC = () => {
                     matchesSearch = availableIngredients.some(avail =>
                         recipe.ingredients.some(ing => {
                             const normalizedIng = ing.toLowerCase();
-                            // Flexible matching: check if either contains the other 
-                            // or if they are very similar (basic robustness)
                             return normalizedIng.includes(avail) || avail.includes(normalizedIng) ||
                                 (avail.length > 3 && normalizedIng.startsWith(avail.substring(0, 4)));
                         })
@@ -111,7 +108,6 @@ const SearchRecipes: React.FC = () => {
 
     const hasFilterConflict = useMemo(() => {
         if (filteredRecipes.length > 0 || !searchQuery) return false;
-        // Check if the recipe exists but is hidden by other filters
         return (recipesData as Recipe[]).some(recipe => {
             const normalizedQuery = searchQuery.trim().toLowerCase();
             let matchesSearch = false;
@@ -135,58 +131,59 @@ const SearchRecipes: React.FC = () => {
     return (
         <div id="recipe-search" className="w-full bg-white py-12 px-6 md:px-12 relative overflow-hidden">
             {/* Atmospheric Depth Layers */}
-            <div className="atmospheric-text top-0 -left-64 opacity-5 pointer-events-none select-none">
+            <div className="atmospheric-text top-0 -left-64 opacity-[0.015] pointer-events-none select-none">
                 STUDIO
             </div>
-            <div className="atmospheric-text bottom-0 -right-64 opacity-5 pointer-events-none select-none" style={{ fontSize: '15rem' }}>
+            <div className="atmospheric-text bottom-0 -right-64 opacity-[0.015] pointer-events-none select-none" style={{ fontSize: '15rem' }}>
                 CUISINE
             </div>
 
             <div className="max-w-wide mx-auto relative z-10">
-                <header className="relative z-10 mb-8">
+                <header className="relative z-10 mb-10 text-center">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
+                        transition={{ duration: 1, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="flex flex-col md:flex-row md:items-end justify-between gap-8"
                     >
-                        <div className="flex-1 max-w-2xl">
-                            <h2 className="text-6xl md:text-7xl mb-10 tracking-tight text-gray-900" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400 }}>
-                                Gourmet Studio
-                            </h2>
-                            <div className="flex items-center gap-4 mb-6">
-                                <button
-                                    onClick={() => setSearchMode("Name")}
-                                    className={`px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all ${searchMode === "Name" ? 'bg-orange-500 text-white shadow-xl shadow-orange-500/20' : 'bg-gray-50 text-gray-400 hover:text-orange-500'}`}
-                                >
-                                    Search by Name
-                                </button>
-                                <button
-                                    onClick={() => setSearchMode("Fridge")}
-                                    className={`px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all ${searchMode === "Fridge" ? 'bg-orange-500 text-white shadow-xl shadow-orange-500/20' : 'bg-gray-50 text-gray-400 hover:text-orange-500'}`}
-                                >
-                                    What's in my fridge?
-                                </button>
-                            </div>
-                            <div className="relative group">
-                                <Search className="absolute left-8 top-1/2 -translate-y-1/2 text-gray-300 group-focus-within:text-orange-500 transition-colors" size={24} />
-                                <input
-                                    type="text"
-                                    placeholder={searchMode === "Name" ? "Search our signature library..." : "List ingredients (e.g. Poha, Chili, Paneer)..."}
-                                    value={searchQuery}
-                                    onChange={(e) => setSearchQuery(e.target.value)}
-                                    className="w-full bg-white border border-gray-100 rounded-full py-6 pl-16 pr-10 text-lg text-black focus:outline-none focus:border-orange-500 transition-all font-light placeholder:text-gray-300 shadow-sm"
-                                />
-                            </div>
+                        <div className="flex items-center gap-4 mb-6 justify-center">
+                            <button
+                                onClick={() => setSearchMode("Name")}
+                                className={`px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all ${searchMode === "Name" ? 'bg-orange-500 text-white shadow-xl shadow-orange-500/20' : 'bg-gray-50 text-gray-400 hover:text-orange-500'}`}
+                            >
+                                Search by Name
+                            </button>
+                            <button
+                                onClick={() => setSearchMode("Fridge")}
+                                className={`px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all ${searchMode === "Fridge" ? 'bg-orange-500 text-white shadow-xl shadow-orange-500/20' : 'bg-gray-50 text-gray-400 hover:text-orange-500'}`}
+                            >
+                                Fridge Mode
+                            </button>
+                        </div>
+                        <h2 className="text-5xl md:text-6xl mb-4 tracking-tighter text-gray-900" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400 }}>
+                            Gourmet Studio
+                        </h2>
+                        <div className="w-12 h-px bg-orange-500/30 mx-auto mb-6" />
+                        <p className="text-gray-400 text-sm font-light uppercase tracking-[0.4em] mb-10">Recipe Discovery Hub</p>
+
+                        <div className="relative group max-w-2xl mx-auto">
+                            <Search className="absolute left-8 top-1/2 -translate-y-1/2 text-gray-300 group-focus-within:text-orange-500 transition-colors" size={24} />
+                            <input
+                                type="text"
+                                placeholder={searchMode === "Name" ? "Search our signature library..." : "List ingredients (e.g. Poha, Chili, Paneer)..."}
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                className="w-full bg-white border border-gray-100 rounded-full py-6 pl-16 pr-10 text-lg text-black focus:outline-none focus:border-orange-500 transition-all font-light placeholder:text-gray-300 shadow-sm"
+                            />
                         </div>
                     </motion.div>
                 </header>
 
                 {/* Advanced Multi-Filter Control Center */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-6 p-6 bg-gray-50/30 backdrop-blur-md rounded-[2rem] border border-gray-100/50 shadow-[0_32px_64px_-24px_rgba(0,0,0,0.05)]">
+                <div className="noise-texture premium-glass hover-glow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-8 p-6 rounded-[2rem] border-orange-500/10 shadow-xl">
+                    <div className="radial-glow absolute inset-0 rounded-[2rem] pointer-events-none" />
                     <div className="space-y-4">
-                        <label className="text-[9px] font-bold uppercase tracking-[0.4em] text-gray-400 px-4">Cuisine Art</label>
+                        <label className="text-[11px] font-bold uppercase tracking-[0.2em] text-gray-500 px-4">Cuisine Art</label>
                         <div className="flex flex-wrap gap-1.5">
                             {cuisines.map(c => (
                                 <FilterButton key={c} active={selectedCuisine === c} onClick={() => setSelectedCuisine(c)}>{c}</FilterButton>
@@ -195,7 +192,7 @@ const SearchRecipes: React.FC = () => {
                     </div>
 
                     <div className="space-y-4">
-                        <label className="text-[9px] font-bold uppercase tracking-[0.4em] text-gray-400 px-4">Meal Course</label>
+                        <label className="text-[11px] font-bold uppercase tracking-[0.2em] text-gray-500 px-4">Meal Course</label>
                         <div className="flex flex-wrap gap-1.5">
                             {mealTypes.map(m => (
                                 <FilterButton key={m} active={selectedMealType === m} onClick={() => setSelectedMealType(m)}>{m}</FilterButton>
@@ -204,7 +201,7 @@ const SearchRecipes: React.FC = () => {
                     </div>
 
                     <div className="space-y-4">
-                        <label className="text-[9px] font-bold uppercase tracking-[0.4em] text-gray-400 px-4">Time Investment</label>
+                        <label className="text-[11px] font-bold uppercase tracking-[0.2em] text-gray-500 px-4">Time Investment</label>
                         <div className="flex flex-wrap gap-1.5">
                             {timeLimits.map(t => (
                                 <FilterButton key={t.label} active={selectedTimeLimit === t.value} onClick={() => setSelectedTimeLimit(t.value)}>{t.label}</FilterButton>
@@ -213,7 +210,7 @@ const SearchRecipes: React.FC = () => {
                     </div>
 
                     <div className="space-y-4">
-                        <label className="text-[9px] font-bold uppercase tracking-[0.4em] text-gray-400 px-4">Dietary Ethos</label>
+                        <label className="text-[11px] font-bold uppercase tracking-[0.2em] text-gray-500 px-4">Dietary Ethos</label>
                         <div className="flex flex-wrap gap-1.5">
                             {diets.map(d => (
                                 <FilterButton key={d} active={selectedDiet === d} onClick={() => setSelectedDiet(d)}>{d}</FilterButton>
@@ -223,13 +220,13 @@ const SearchRecipes: React.FC = () => {
                 </div>
 
                 {/* Smart Pantry (compact) */}
-                <div className="mb-6 flex flex-wrap items-center gap-3 px-2">
-                    <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-gray-400 whitespace-nowrap">Smart Pantry (Avoid):</span>
+                <div className="mb-8 flex flex-wrap items-center gap-3 px-2">
+                    <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap">Smart Pantry (Avoid):</span>
                     <div className="flex-1 flex flex-wrap gap-2 items-center bg-gray-50 rounded-full border border-gray-100 px-5 py-2">
                         <input
                             type="text"
                             placeholder="Type item and press Enter to exclude..."
-                            className="flex-grow bg-transparent border-none focus:outline-none text-[11px] font-light italic text-gray-500 placeholder:text-gray-300"
+                            className="flex-grow bg-transparent border-none focus:outline-none text-xs font-light italic text-gray-500 placeholder:text-gray-300"
                             onKeyDown={(e) => {
                                 if (e.key === 'Enter') {
                                     const val = e.currentTarget.value.trim();
@@ -241,7 +238,7 @@ const SearchRecipes: React.FC = () => {
                             }}
                         />
                         {avoidedIngredients.map(ing => (
-                            <span key={ing} className="bg-orange-500 text-white px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest flex items-center gap-1.5">
+                            <span key={ing} className="bg-orange-500 text-white px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest flex items-center gap-2">
                                 {ing} <button onClick={() => setAvoidedIngredients(avoidedIngredients.filter(a => a !== ing))} className="hover:text-white/70">×</button>
                             </span>
                         ))}
@@ -250,77 +247,84 @@ const SearchRecipes: React.FC = () => {
 
                 <motion.div
                     layout
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 lg:gap-16"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 lg:gap-14"
                 >
                     <AnimatePresence mode="popLayout">
                         {filteredRecipes.map((recipe, index) => (
                             <motion.div
-                                layout
                                 key={recipe.id}
-                                initial={{ opacity: 0, scale: 0.9, y: 40 }}
-                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                layout
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.95 }}
-                                transition={{ duration: 1, delay: index * 0.05, ease: [0.19, 1, 0.22, 1] }}
+                                transition={{ duration: 0.6, delay: index * 0.05 }}
                                 whileHover={{ y: -16 }}
                                 onClick={() => setSelectedRecipe(recipe)}
-                                className="bg-white border border-gray-100 rounded-[2.5rem] overflow-hidden flex flex-col h-full group hover:shadow-[0_64px_128px_rgba(0,0,0,0.07)] transition-all duration-1000 cursor-pointer"
+                                className="bg-white group rounded-[2.5rem] overflow-hidden flex flex-col h-full transition-all duration-500 cursor-pointer shadow-[0_20px_50px_-15px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] border border-gray-100"
                             >
                                 {isRecommended(recipe) && (
-                                    <div className="absolute top-8 left-8 z-20 bg-orange-500 text-white text-[10px] font-bold px-5 py-2.5 rounded-full shadow-2xl uppercase tracking-[0.25em] transform -rotate-2">
-                                        Signature Match
+                                    <div className="absolute top-8 left-8 z-20 bg-orange-600 text-white text-[10px] font-black px-5 py-2 rounded-full shadow-2xl uppercase tracking-[0.2em] transform -rotate-1">
+                                        Signature Tailored
                                     </div>
                                 )}
 
-                                <div className="relative h-96 overflow-hidden">
-                                    <img
-                                        src={recipe.image}
-                                        alt={recipe.name}
-                                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-95 group-hover:opacity-100 transition-opacity duration-700" />
-                                    <div className="absolute bottom-10 left-10 right-10 flex justify-between items-end">
-                                        <div>
-                                            <div className="flex items-center gap-4 mb-4">
-                                                <span className="text-[10px] text-white/90 font-bold uppercase tracking-[0.25em] bg-white/15 backdrop-blur-xl border border-white/20 px-4 py-1.5 rounded-full text-center">
-                                                    {recipe.cuisine}
-                                                </span>
-                                                <span className="text-[10px] text-orange-400 font-bold uppercase tracking-[0.25em]">
-                                                    {recipe.mealType}
-                                                </span>
-                                            </div>
-                                            <h3 className="text-5xl tracking-tight text-white mb-3 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400 }}>
-                                                {recipe.name}
-                                            </h3>
-                                            <div className="flex items-center gap-5">
-                                                <StarRating rating={recipe.rating} />
-                                                <span className="text-[10px] text-white/40 font-bold uppercase tracking-widest">{recipe.reviews?.length || 0} REVIEWS</span>
+                                {/* Image Pedestal */}
+                                <div className="p-4 bg-gray-50/50">
+                                    <div className="relative h-72 rounded-[2rem] overflow-hidden shadow-inner group-hover:shadow-2xl transition-all duration-500">
+                                        <img
+                                            src={recipe.image}
+                                            alt={recipe.name}
+                                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-40 group-hover:opacity-60 transition-opacity" />
+
+                                        <div className="absolute top-6 right-6">
+                                            <div className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl shadow-xl flex items-center gap-2">
+                                                <Clock size={14} className="text-orange-600" />
+                                                <span className="text-[11px] font-black text-gray-900">{recipe.cookTime}m</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="p-12 flex flex-col flex-grow">
-                                    <div className="flex flex-wrap items-center gap-x-10 gap-y-5 text-gray-400 text-[10px] mb-12">
-                                        <span className="flex items-center gap-3 tracking-[0.2em] uppercase font-bold text-gray-900 bg-gray-50 px-4 py-2 rounded-full">
-                                            <LayoutGrid size={15} className="text-orange-500" /> {recipe.diet}
-                                        </span>
-                                        <span className="flex items-center gap-3 tracking-[0.2em] uppercase font-bold text-gray-500">
-                                            <Clock size={15} className="text-orange-500" /> {recipe.cookTime} MINS
-                                        </span>
-                                        <span className="flex items-center gap-3 tracking-[0.2em] uppercase font-bold text-gray-300">
-                                            {recipe.difficulty}
+                                {/* Content Narrative */}
+                                <div className="p-10 flex flex-col flex-grow bg-white relative">
+                                    <div className="flex items-center gap-2 mb-4">
+                                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-orange-600/80">
+                                            {recipe.cuisine} • {recipe.mealType}
                                         </span>
                                     </div>
 
-                                    <div className="mt-auto">
-                                        <div className="flex items-center justify-between group/btn">
-                                            <div className="space-y-1.5">
-                                                <span className="text-[10px] font-bold text-orange-500 uppercase tracking-[0.35em] block opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0 text-center">Discover</span>
-                                                <span className="text-xs font-bold text-gray-900 uppercase tracking-[0.25em] block text-center">Explore Creation</span>
-                                            </div>
-                                            <div className="w-16 h-16 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-orange-500 group-hover:text-white group-hover:border-orange-500 group-hover:shadow-[0_20px_40px_rgba(249,115,22,0.3)] transition-all duration-700">
-                                                <ChevronRight size={26} className="transition-transform duration-500 group-hover:translate-x-1" />
-                                            </div>
+                                    <div className="mb-6">
+                                        <h3 className="text-3xl md:text-3.5xl text-gray-900 leading-tight group-hover:text-orange-600 transition-colors" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400 }}>
+                                            {recipe.name}
+                                        </h3>
+                                        <div className="h-px w-8 bg-orange-500/20 mt-3 group-hover:w-full transition-all duration-700" />
+                                    </div>
+
+                                    <div className="mb-10 space-y-4">
+                                        <div className="flex items-center justify-between">
+                                            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-gray-400">Core Essence</span>
+                                            <span className="text-[11px] font-bold text-gray-300">Target: {recipe.difficulty}</span>
+                                        </div>
+                                        <div className="flex flex-wrap gap-2">
+                                            {recipe.ingredients.slice(0, 3).map((ing, i) => (
+                                                <span key={i} className="px-4 py-2 rounded-xl bg-orange-50 text-orange-700 text-[11px] font-black uppercase tracking-widest border border-orange-100/50">
+                                                    {ing}
+                                                </span>
+                                            ))}
+                                            {recipe.ingredients.length > 3 && (
+                                                <span className="px-4 py-2 rounded-xl bg-gray-50 text-gray-400 text-[11px] font-bold">
+                                                    +{recipe.ingredients.length - 3}
+                                                </span>
+                                            )}
+                                        </div>
+                                    </div>
+
+                                    <div className="mt-auto pt-8 border-t border-gray-100 flex items-center justify-between group/action">
+                                        <span className="text-xs font-black uppercase tracking-[0.25em] text-gray-900 group-hover/action:text-orange-600 transition-colors">Manifest Artistry</span>
+                                        <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center group-hover/action:bg-orange-600 group-hover/action:text-white transition-all duration-500">
+                                            <ChevronRight size={18} className="translate-x-0 group-hover/action:translate-x-1" />
                                         </div>
                                     </div>
                                 </div>
@@ -331,14 +335,18 @@ const SearchRecipes: React.FC = () => {
 
                 {filteredRecipes.length === 0 && (
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="py-40 text-center"
+                        className="py-32 flex flex-col items-center text-center"
                     >
-                        <div className="text-orange-500/20 mb-8 flex justify-center">
-                            <Search size={80} strokeWidth={0.5} />
+                        <div className="w-32 h-32 bg-gray-50 rounded-full flex items-center justify-center mb-12 relative">
+                            <Search size={40} className="text-gray-200" />
+                            <div className="absolute inset-0 border border-dashed border-gray-200 rounded-full animate-spin-slow" />
                         </div>
-                        <p className="text-gray-400 text-3xl font-light italic mb-8" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                        <h3 className="text-4xl md:text-5xl text-gray-900 mb-6" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                            The Studio is Silent
+                        </h3>
+                        <p className="text-gray-400 max-w-sm mb-12 italic text-lg">
                             {hasFilterConflict
                                 ? "We found a match, but your active filters are hiding it."
                                 : "No culinary narratives match your current palette."}

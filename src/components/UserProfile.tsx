@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
-import { User, Award, Save, Sparkles, ChefHat, Dna, Mail, Heart, ShieldAlert } from 'lucide-react';
+import { User, Award, Save, Sparkles, ChefHat, Mail, Heart, ShieldAlert } from 'lucide-react';
 
 interface UserProfile {
     name: string;
@@ -64,7 +64,7 @@ const UserProfile: React.FC = () => {
                     <div className="p-2 bg-orange-50 text-orange-500 rounded-lg">
                         {icon}
                     </div>
-                    <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">{label}</label>
+                    <label className="text-xs font-bold uppercase tracking-[0.2em] text-gray-500">{label}</label>
                 </div>
                 <div className="relative group/input">
                     <input
@@ -78,7 +78,7 @@ const UserProfile: React.FC = () => {
                                 setInput("");
                             }
                         }}
-                        className="w-full bg-white border border-gray-100 rounded-2xl py-6 px-8 text-gray-900 focus:outline-none focus:border-orange-500 transition-all font-light placeholder:text-gray-300 shadow-sm pr-24"
+                        className="w-full bg-white border border-gray-200 rounded-2xl py-6 px-8 text-gray-900 focus:outline-none focus:border-orange-500 transition-all font-medium placeholder:text-gray-300 shadow-sm pr-24"
                         placeholder={placeholder}
                     />
                     <AnimatePresence>
@@ -89,7 +89,7 @@ const UserProfile: React.FC = () => {
                                 exit={{ opacity: 0, x: 10 }}
                                 type="button"
                                 onClick={() => { toggleTag(field, input); setInput(""); }}
-                                className="absolute right-6 top-1/2 -translate-y-1/2 text-[10px] font-bold text-orange-500 uppercase tracking-widest bg-orange-50 px-4 py-2 rounded-full"
+                                className="absolute right-6 top-1/2 -translate-y-1/2 text-xs font-bold text-orange-500 uppercase tracking-widest bg-orange-50 px-5 py-2.5 rounded-full"
                             >
                                 Add
                             </motion.button>
@@ -107,7 +107,7 @@ const UserProfile: React.FC = () => {
                                 type="button"
                                 key={t}
                                 onClick={() => toggleTag(field, t)}
-                                className="px-5 py-2.5 bg-gray-900 text-white rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-orange-500 transition-all flex items-center gap-3 group/tag shadow-lg shadow-black/5"
+                                className="px-5 py-2.5 bg-gray-900 text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-orange-500 transition-all flex items-center gap-3 group/tag shadow-lg shadow-black/5"
                             >
                                 {t} <span className="text-white/30 group-hover/tag:text-white/60 transition-colors">×</span>
                             </motion.button>
@@ -138,12 +138,12 @@ const UserProfile: React.FC = () => {
     };
 
     return (
-        <div id="user-profile" className="w-full bg-white py-32 px-6 md:px-12 relative overflow-hidden">
+        <div id="user-profile" className="w-full bg-white py-40 md:py-60 px-6 md:px-12 relative overflow-hidden">
             {/* Atmospheric Depth */}
-            <div className="atmospheric-text top-40 -left-48 opacity-5 -rotate-12 pointer-events-none select-none">
+            <div className="atmospheric-text top-40 -left-64 opacity-[0.015] -rotate-6 pointer-events-none select-none">
                 IDENTITY
             </div>
-            <div className="atmospheric-text bottom-40 -right-48 opacity-5 rotate-12 pointer-events-none select-none" style={{ fontSize: '15rem' }}>
+            <div className="atmospheric-text bottom-40 -right-64 opacity-[0.015] rotate-6 pointer-events-none select-none text-[12rem]">
                 ESSENCE
             </div>
 
@@ -154,63 +154,64 @@ const UserProfile: React.FC = () => {
                 viewport={{ once: true }}
                 className="max-w-wide mx-auto relative z-10"
             >
-                <header className="mb-24 flex flex-col items-center text-center">
+                <header className="relative z-10 mb-24 text-center">
                     <motion.div
-                        variants={cardVariants}
-                        className="w-32 h-32 rounded-[3rem] bg-orange-500 flex items-center justify-center text-white shadow-[0_32px_64px_rgba(249,115,22,0.3)] mb-12 transform -rotate-3"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        className="inline-block"
                     >
-                        <User size={64} strokeWidth={1} />
+                        <div className="flex items-center justify-center gap-4 mb-6">
+                            <div className="h-px w-12 bg-orange-500/20" />
+                            <ChefHat className="text-orange-500" size={24} />
+                            <div className="h-px w-12 bg-orange-500/20" />
+                        </div>
+                        <h2 className="text-6xl md:text-7xl mb-6 tracking-tighter text-gray-900 leading-none" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400 }}>
+                            Culinary Identity
+                        </h2>
+                        <p className="text-gray-500 text-xs font-bold uppercase tracking-[0.5em] max-w-xs mx-auto">The Digital Blueprint of Your Palette</p>
                     </motion.div>
-                    <motion.h2
-                        variants={cardVariants}
-                        className="text-7xl md:text-9xl mb-8 tracking-tighter text-gray-900"
-                        style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
-                    >
-                        Culinary Identity
-                    </motion.h2>
-                    <motion.p
-                        variants={cardVariants}
-                        className="text-gray-400 font-light italic max-w-2xl tracking-wide"
-                        style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.6rem' }}
-                    >
-                        Master your palette. Curate your dining philosophy and track your journey toward gastronomic excellence.
-                    </motion.p>
                 </header>
 
-                <form onSubmit={handleSave} className="grid grid-cols-1 xl:grid-cols-12 gap-12 lg:gap-20">
+                <form onSubmit={handleSave} className="grid grid-cols-1 xl:grid-cols-12 gap-12 lg:gap-24">
 
                     {/* Column 1: Personal Essence */}
-                    <div className="xl:col-span-4 space-y-12">
-                        <motion.div variants={cardVariants} className="p-12 bg-gray-50/50 backdrop-blur-xl rounded-[3.5rem] border border-gray-100/50 shadow-2xl shadow-black/[0.02]">
-                            <div className="flex items-center gap-4 mb-12">
-                                <div className="p-3 bg-white rounded-2xl shadow-sm text-gray-400">
-                                    <Dna size={24} />
+                    <div className="lg:col-span-4 space-y-12">
+                        <motion.div variants={cardVariants} className="noise-texture premium-glass hover-glow p-12 lg:p-14 rounded-[3.5rem] border border-gray-100 shadow-xl">
+                            <div className="radial-glow absolute inset-0 rounded-[3.5rem] pointer-events-none" />
+                            <div className="flex items-center gap-6 mb-12">
+                                <div className="p-5 bg-gray-900 text-white rounded-3xl shadow-2xl">
+                                    <User size={24} />
                                 </div>
-                                <h3 className="text-[12px] font-bold uppercase tracking-[0.4em] text-gray-900">Personal Essence</h3>
+                                <div>
+                                    <h3 className="text-2xl tracking-tight text-gray-900" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Personal Essence</h3>
+                                    <p className="text-xs uppercase tracking-widest text-gray-400 font-bold">Avatar & Contact</p>
+                                </div>
                             </div>
 
                             <div className="space-y-10">
                                 <div className="space-y-4">
-                                    <label className="flex items-center gap-3 text-[9px] font-bold uppercase tracking-[0.3em] text-gray-400 ml-1">
-                                        <User size={14} /> Full Expression
+                                    <label className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-gray-500 ml-1">
+                                        <User size={14} className="text-orange-500" /> Full Expression
                                     </label>
                                     <input
                                         type="text"
                                         value={profile.name}
                                         onChange={(e) => setProfile({ ...profile, name: e.target.value })}
-                                        className="w-full bg-white border border-gray-100 rounded-2xl py-6 px-8 text-gray-900 focus:outline-none focus:border-orange-500 transition-all font-medium placeholder:text-gray-300 shadow-sm"
+                                        className="w-full bg-white border border-gray-200 rounded-2xl py-6 px-8 text-gray-900 focus:outline-none focus:border-orange-500 transition-all font-medium placeholder:text-gray-300 shadow-sm"
                                         placeholder="Your Name"
                                     />
                                 </div>
                                 <div className="space-y-4">
-                                    <label className="flex items-center gap-3 text-[9px] font-bold uppercase tracking-[0.3em] text-gray-400 ml-1">
-                                        <Mail size={14} /> Digital Letterbox
+                                    <label className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-gray-500 ml-1">
+                                        <Mail size={14} className="text-orange-500" /> Digital Letterbox
                                     </label>
                                     <input
                                         type="email"
                                         value={profile.email}
                                         onChange={(e) => setProfile({ ...profile, email: e.target.value })}
-                                        className="w-full bg-white border border-gray-100 rounded-2xl py-6 px-8 text-gray-900 focus:outline-none focus:border-orange-500 transition-all font-medium placeholder:text-gray-300 shadow-sm"
+                                        className="w-full bg-white border border-gray-200 rounded-2xl py-6 px-8 text-gray-900 focus:outline-none focus:border-orange-500 transition-all font-medium placeholder:text-gray-300 shadow-sm"
                                         placeholder="your@email.com"
                                     />
                                 </div>
@@ -219,17 +220,17 @@ const UserProfile: React.FC = () => {
 
                         <motion.div variants={cardVariants} className="p-12 bg-gray-900 text-white rounded-[3.5rem] shadow-3xl shadow-orange-500/10 relative overflow-hidden group">
                             <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-                            <div className="relative z-10">
-                                <Save className="mb-8 text-orange-500" size={40} />
-                                <h4 className="text-3xl mb-6 font-light" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Preserve Progress</h4>
+                            <div className="relative z-10 text-center">
+                                <Save className="mx-auto mb-8 text-orange-500" size={40} />
+                                <h4 className="text-3xl mb-8 font-light" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Preserve Progress</h4>
                                 <button
                                     type="submit"
-                                    className="w-full py-6 bg-white text-gray-900 rounded-2xl font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-orange-500 hover:text-white transition-all active:scale-95 shadow-xl"
+                                    className="w-full py-6 bg-white text-gray-900 rounded-2xl font-black uppercase tracking-[0.3em] text-[11px] hover:bg-orange-500 hover:text-white transition-all active:scale-95 shadow-xl"
                                 >
                                     {isSaved ? "Identity Synced" : "Preserve Identity"}
                                 </button>
                                 {isSaved && (
-                                    <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-orange-500 text-[9px] font-bold uppercase tracking-widest text-center mt-6">
+                                    <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-orange-500 text-xs font-bold uppercase tracking-widest text-center mt-8">
                                         Synced to neural core
                                     </motion.p>
                                 )}
@@ -238,14 +239,21 @@ const UserProfile: React.FC = () => {
                     </div>
 
                     {/* Column 2: Culinary Mastery */}
-                    <div className="xl:col-span-8 space-y-12">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-                            <motion.div variants={cardVariants} className="p-12 bg-white rounded-[3.5rem] border border-gray-100 shadow-2xl shadow-black/[0.02] flex flex-col">
-                                <div className="flex items-center gap-4 mb-12">
-                                    <div className="p-3 bg-orange-50 text-orange-500 rounded-2xl shadow-sm">
-                                        <ChefHat size={24} />
+                    <div className="lg:col-span-8 space-y-12">
+                        <div className="grid grid-cols-1 md:grid-cols-1 gap-12">
+                            <motion.div variants={cardVariants} className="noise-texture premium-glass hover-glow p-12 lg:p-20 rounded-[4rem] border border-gray-100 shadow-xl">
+                                <div className="radial-glow absolute inset-0 rounded-[4rem] pointer-events-none" />
+                                <div className="flex items-center justify-between mb-16">
+                                    <div className="flex items-center gap-6">
+                                        <div className="p-6 bg-gray-900 text-white rounded-[2.5rem] shadow-2xl">
+                                            <Sparkles size={28} />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-4xl tracking-tight text-gray-900" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Culinary Mastery</h3>
+                                            <p className="text-xs uppercase tracking-widest text-gray-400 font-bold">Skill Acquisition Path</p>
+                                        </div>
                                     </div>
-                                    <h3 className="text-[12px] font-bold uppercase tracking-[0.4em] text-gray-900">Culinary Mastery</h3>
+                                    <div className="h-px w-24 bg-gray-100 hidden md:block" />
                                 </div>
                                 <div className="space-y-6 flex-grow">
                                     {skillLevels.map((lvl) => (
@@ -253,24 +261,24 @@ const UserProfile: React.FC = () => {
                                             key={lvl.name}
                                             type="button"
                                             onClick={() => setProfile({ ...profile, cookingLevel: lvl.name })}
-                                            className={`w-full p-6 rounded-3xl border text-left transition-all duration-500 group relative overflow-hidden ${profile.cookingLevel === lvl.name
-                                                ? 'bg-orange-500 border-orange-500 text-white shadow-xl shadow-orange-500/20'
+                                            className={`w-full p-8 rounded-[2.5rem] border text-left transition-all duration-500 group relative overflow-hidden ${profile.cookingLevel === lvl.name
+                                                ? 'bg-orange-500 border-orange-500 text-white shadow-xl shadow-orange-500/20 scale-[1.02]'
                                                 : 'bg-white border-gray-100 text-gray-400 hover:border-orange-500/30'
                                                 }`}
                                         >
                                             <div className="flex items-center justify-between relative z-10">
-                                                <div className="flex items-center gap-4">
-                                                    <div className={`p-2 rounded-xl ${profile.cookingLevel === lvl.name ? 'bg-white/20' : 'bg-gray-50'}`}>
+                                                <div className="flex items-center gap-6">
+                                                    <div className={`p-4 rounded-2xl ${profile.cookingLevel === lvl.name ? 'bg-white/20' : 'bg-orange-50 text-orange-500'}`}>
                                                         {lvl.icon}
                                                     </div>
                                                     <div>
-                                                        <p className="font-bold text-[10px] uppercase tracking-widest">{lvl.name}</p>
-                                                        <p className={`text-[9px] mt-1 ${profile.cookingLevel === lvl.name ? 'text-white/70' : 'text-gray-300'}`}>{lvl.desc}</p>
+                                                        <p className="font-bold text-xs uppercase tracking-widest">{lvl.name}</p>
+                                                        <p className={`text-[11px] mt-1 ${profile.cookingLevel === lvl.name ? 'text-white/70' : 'text-gray-400'}`}>{lvl.desc}</p>
                                                     </div>
                                                 </div>
                                                 {profile.cookingLevel === lvl.name && (
                                                     <motion.div layoutId="skillActive" className="text-white">
-                                                        <Sparkles size={16} />
+                                                        <Sparkles size={20} />
                                                     </motion.div>
                                                 )}
                                             </div>
@@ -279,27 +287,31 @@ const UserProfile: React.FC = () => {
                                 </div>
                             </motion.div>
 
-                            <motion.div variants={cardVariants} className="p-12 bg-white rounded-[3.5rem] border border-gray-100 shadow-2xl shadow-black/[0.02] flex flex-col">
-                                <div className="flex items-center gap-4 mb-12">
-                                    <div className="p-3 bg-gray-900 text-white rounded-2xl shadow-sm">
-                                        <Heart size={24} />
+                            <motion.div variants={cardVariants} className="noise-texture premium-glass hover-glow p-12 lg:p-14 rounded-[3.5rem] border border-gray-100 shadow-xl">
+                                <div className="radial-glow absolute inset-0 rounded-[3.5rem] pointer-events-none" />
+                                <div className="flex items-center gap-6 mb-12">
+                                    <div className="p-5 bg-orange-500 text-white rounded-3xl shadow-2xl shadow-orange-500/20">
+                                        <Award size={24} />
                                     </div>
-                                    <h3 className="text-[12px] font-bold uppercase tracking-[0.4em] text-gray-900">Dietary Ethos</h3>
+                                    <div>
+                                        <h3 className="text-2xl tracking-tight text-gray-900" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Dietary Philosphy</h3>
+                                        <p className="text-xs uppercase tracking-widest text-gray-400 font-bold">Health & Ethics</p>
+                                    </div>
                                 </div>
-                                <div className="space-y-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     {diets.map((d) => (
                                         <button
                                             key={d}
                                             type="button"
                                             onClick={() => setProfile({ ...profile, dietPreference: d })}
-                                            className={`w-full p-6 rounded-3xl border text-left transition-all duration-500 group ${profile.dietPreference === d
+                                            className={`w-full p-8 rounded-3xl border text-left transition-all duration-500 group ${profile.dietPreference === d
                                                 ? 'bg-gray-900 border-gray-900 text-white shadow-xl rotate-1 scale-[1.02]'
                                                 : 'bg-white border-gray-100 text-gray-400 hover:border-gray-900/30'
                                                 }`}
                                         >
                                             <div className="flex items-center justify-between">
-                                                <span className="font-bold text-[10px] uppercase tracking-widest">{d}</span>
-                                                {profile.dietPreference === d && <Award size={16} className="text-orange-500" />}
+                                                <span className="font-bold text-xs uppercase tracking-widest">{d}</span>
+                                                {profile.dietPreference === d && <Award size={18} className="text-orange-500" />}
                                             </div>
                                         </button>
                                     ))}
@@ -307,7 +319,8 @@ const UserProfile: React.FC = () => {
                             </motion.div>
                         </div>
 
-                        <motion.div variants={cardVariants} className="p-12 lg:p-20 bg-white rounded-[4.5rem] border border-gray-100 shadow-4xl shadow-black/[0.02]">
+                        <motion.div variants={cardVariants} className="noise-texture premium-glass hover-glow p-12 lg:p-20 rounded-[4rem] border border-gray-100 shadow-xl">
+                            <div className="radial-glow absolute inset-0 rounded-[4rem] pointer-events-none" />
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 mb-20">
                                 <TagInput
                                     label="Preferred Canvas"
@@ -322,7 +335,7 @@ const UserProfile: React.FC = () => {
                                     placeholder="Add e.g. Peanuts..."
                                 />
                             </div>
-                            <div className="pt-20 border-t border-gray-50">
+                            <div className="pt-20 border-t border-gray-100/30">
                                 <TagInput
                                     label="Biological Sensitivities"
                                     icon={<Sparkles size={16} />}

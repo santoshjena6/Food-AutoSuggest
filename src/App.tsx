@@ -62,17 +62,27 @@ const App: React.FC = () => {
         <Dishes />
       </section>
 
-      {/* Decorative Gap 1 */}
-      <div className="relative h-40 bg-white overflow-hidden pointer-events-none">
-        <div className="section-divider" />
+      {/* Decorative Transition 1: ESSENCE */}
+      <div className="relative h-[40vh] bg-white overflow-hidden pointer-events-none flex items-center justify-center">
+        <div className="section-divider opacity-30" />
         <motion.div
-          animate={{ x: [0, 50, 0], opacity: [0.3, 0.6, 0.3] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/2 left-1/4 -translate-y-1/2 text-9xl font-black text-gray-50 italic opacity-20"
-          style={{ fontFamily: "'Cormorant Garamond', serif" }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+          className="relative"
         >
-          ESSENCE
+          <div className="absolute inset-0 blur-[100px] bg-orange-500/5 rounded-full" />
+          <h2
+            className="text-[15vw] font-black text-gray-900/[0.03] italic leading-none tracking-tighter"
+            style={{ fontFamily: "'Cormorant Garamond', serif" }}
+          >
+            ESSENCE
+          </h2>
         </motion.div>
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+          <div className="w-px h-24 bg-gradient-to-b from-orange-500/50 to-transparent" />
+          <p className="text-[10px] font-black uppercase tracking-[0.5em] text-orange-500/40">The Core of Identity</p>
+        </div>
       </div>
 
       {/* Recipe Management System */}
@@ -80,16 +90,21 @@ const App: React.FC = () => {
         <SearchRecipes />
       </section>
 
-      {/* Decorative Gap 2 */}
-      <div className="relative h-40 bg-white overflow-hidden pointer-events-none">
-        <div className="section-divider" />
+      {/* Decorative Transition 2: CRAFT */}
+      <div className="relative h-[40vh] bg-white overflow-hidden pointer-events-none flex items-center justify-center">
+        <div className="section-divider opacity-30" />
         <motion.div
-          animate={{ x: [0, -50, 0], opacity: [0.3, 0.6, 0.3] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/2 right-1/4 -translate-y-1/2 text-9xl font-black text-gray-50 italic opacity-20"
-          style={{ fontFamily: "'Cormorant Garamond', serif" }}
+          animate={{ rotate: [0, 1, -1, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          className="relative"
         >
-          CRAFT
+          <div className="absolute inset-0 blur-[120px] bg-orange-500/10 rounded-full" />
+          <h2
+            className="text-[15vw] font-black text-gray-900/[0.03] italic leading-none tracking-tighter"
+            style={{ fontFamily: "'Cormorant Garamond', serif" }}
+          >
+            CRAFT
+          </h2>
         </motion.div>
       </div>
 
@@ -98,23 +113,120 @@ const App: React.FC = () => {
         <UserProfile />
       </section>
 
-      {/* Basic Footer */}
-      <footer className="relative z-30 py-24 border-t border-gray-100 text-center flex flex-col items-center gap-6 bg-gray-50">
-        <div className="flex items-center gap-2">
-          <ChefHat size={32} className="text-orange-500" />
-          <span className="text-3xl logo-font text-orange-500">Noodle Artistry</span>
+      {/* Newsletter / CTA Section */}
+      <section className="relative z-30 py-40 bg-white px-6">
+        <div className="max-w-wide mx-auto">
+          <div className="noise-texture premium-glass p-16 md:p-32 rounded-[4rem] text-center relative overflow-hidden group border border-gray-100 shadow-xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/[0.03] to-transparent" />
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              className="relative z-10"
+            >
+              <ChefHat size={48} className="mx-auto text-orange-500 mb-10" />
+              <h2 className="text-5xl md:text-7xl mb-8 tracking-tighter text-gray-900" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                Join the Culinary Vanguard
+              </h2>
+              <p className="text-gray-500 text-lg md:text-xl font-light max-w-2xl mx-auto mb-16 leading-relaxed">
+                Receive curated inspiration, signature techniques, and early access to archival recipes. Pure artistry, delivered monthly.
+              </p>
+
+              <div className="flex flex-col md:flex-row items-center justify-center gap-6 max-w-2xl mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your digital letterbox"
+                  className="w-full md:flex-grow bg-white border border-gray-100 rounded-3xl py-6 px-10 text-gray-900 focus:outline-none focus:border-orange-500 transition-all font-medium placeholder:text-gray-300 shadow-sm"
+                />
+                <button className="w-full md:w-auto px-12 py-6 bg-gray-900 text-white rounded-3xl font-black uppercase tracking-[0.2em] text-[11px] hover:bg-orange-500 transition-all shadow-xl active:scale-95">
+                  Subscribe
+                </button>
+              </div>
+              <p className="mt-8 text-[11px] font-bold uppercase tracking-widest text-gray-300">Privacy prioritized. No noise, just essence.</p>
+            </motion.div>
+          </div>
         </div>
-        <p className="text-gray-400 text-sm font-light max-w-md">
-          A cinematic experience blending the art of cooking with modern technology. Explore our recipes, customize your journey, and taste the passion.
-        </p>
-        <div className="flex gap-8 text-gray-400 text-xs font-bold uppercase tracking-widest mt-4">
-          <a href="#" className="hover:text-orange-500 transition-colors">Privacy</a>
-          <a href="#" className="hover:text-orange-500 transition-colors">Terms</a>
-          <a href="#" className="hover:text-orange-500 transition-colors">Contact</a>
+      </section>
+
+      {/* Premium Editorial Footer */}
+      <footer className="relative z-30 pt-40 pb-20 bg-gray-50 border-t border-gray-100 px-6 md:px-12">
+        <div className="max-w-wide mx-auto grid grid-cols-1 md:grid-cols-12 gap-20 md:gap-12 mb-32">
+
+          {/* Brand Pillar */}
+          <div className="md:col-span-5 space-y-10">
+            <div className="flex items-center gap-3">
+              <ChefHat size={32} className="text-orange-500" />
+              <span className="text-3xl logo-font transition-colors duration-500">
+                <span className="text-orange-500">Noodle</span>
+                <span className="text-gray-900 ml-2">Artistry</span>
+              </span>
+            </div>
+            <p className="text-gray-500 text-lg font-light leading-relaxed max-w-md" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+              A cinematic studio dedicated to the intersection of culinary heritage and digital transcendence. We believe every dish is a manuscript, and every ingredient a word.
+            </p>
+            <div className="flex gap-6">
+              {['Instagram', 'Archives', 'Studio'].map((social) => (
+                <a key={social} href="#" className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 hover:text-orange-500 transition-colors">
+                  {social}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation Matrix */}
+          <div className="md:col-span-2 space-y-8">
+            <h4 className="text-[11px] font-black uppercase tracking-[0.4em] text-gray-900">Archives</h4>
+            <ul className="space-y-4">
+              {['Signature Dishes', 'Gourmet Search', 'Visual Essays', 'The Lab'].map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-gray-400 text-sm font-light hover:text-orange-500 transition-colors">{item}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="md:col-span-2 space-y-8">
+            <h4 className="text-[11px] font-black uppercase tracking-[0.4em] text-gray-900">Identity</h4>
+            <ul className="space-y-4">
+              {['Member Portal', 'Preferences', 'Skill Match', 'Rewards'].map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-gray-400 text-sm font-light hover:text-orange-500 transition-colors">{item}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Node */}
+          <div className="md:col-span-3 space-y-8">
+            <h4 className="text-[11px] font-black uppercase tracking-[0.4em] text-gray-900">Reach Out</h4>
+            <p className="text-gray-400 text-sm font-light">
+              studio@noodleartistry.com<br />
+              Manhattan, NY • Worldwide
+            </p>
+            <div className="pt-4">
+              <span className="text-[9px] font-black uppercase tracking-[0.5em] text-orange-500/50">EST. 2024</span>
+            </div>
+          </div>
+
         </div>
-        <p className="text-gray-300 text-[10px] mt-8 font-light italic">
-          &copy; 2024 Noodle Artistry. All images via Unsplash. Built with React & Framer Motion.
-        </p>
+
+        {/* Legal & Credits Line */}
+        <div className="max-w-wide mx-auto pt-16 border-t border-gray-200/50 flex flex-col md:flex-row justify-between items-center gap-8">
+          <p className="text-gray-400 text-[10px] font-bold uppercase tracking-[0.3em]">
+            &copy; 2024 Noodle Artistry. All Essence Reserved.
+          </p>
+          <div className="flex gap-10">
+            {['Privacy Policy', 'Terms of Service', 'Cookie Usage'].map((legal) => (
+              <a key={legal} href="#" className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-300 hover:text-gray-900 transition-colors">
+                {legal}
+              </a>
+            ))}
+          </div>
+          <p className="text-gray-400 text-[10px] italic">
+            Visuals via <a href="https://unsplash.com" target="_blank" rel="noreferrer" className="underline hover:text-orange-500">Unsplash</a>
+          </p>
+        </div>
       </footer>
     </main>
   );
