@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { User, Award, Save, Sparkles, ChefHat, Dna, Mail, Heart, ShieldAlert } from 'lucide-react';
 
 interface UserProfile {
@@ -118,7 +118,7 @@ const UserProfile: React.FC = () => {
         );
     };
 
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -128,12 +128,12 @@ const UserProfile: React.FC = () => {
         }
     };
 
-    const cardVariants = {
+    const cardVariants: Variants = {
         hidden: { opacity: 0, y: 40 },
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.8, ease: [0.19, 1, 0.22, 1] }
+            transition: { duration: 0.8, ease: "easeOut" }
         }
     };
 
@@ -254,8 +254,8 @@ const UserProfile: React.FC = () => {
                                             type="button"
                                             onClick={() => setProfile({ ...profile, cookingLevel: lvl.name })}
                                             className={`w-full p-6 rounded-3xl border text-left transition-all duration-500 group relative overflow-hidden ${profile.cookingLevel === lvl.name
-                                                    ? 'bg-orange-500 border-orange-500 text-white shadow-xl shadow-orange-500/20'
-                                                    : 'bg-white border-gray-100 text-gray-400 hover:border-orange-500/30'
+                                                ? 'bg-orange-500 border-orange-500 text-white shadow-xl shadow-orange-500/20'
+                                                : 'bg-white border-gray-100 text-gray-400 hover:border-orange-500/30'
                                                 }`}
                                         >
                                             <div className="flex items-center justify-between relative z-10">
@@ -293,8 +293,8 @@ const UserProfile: React.FC = () => {
                                             type="button"
                                             onClick={() => setProfile({ ...profile, dietPreference: d })}
                                             className={`w-full p-6 rounded-3xl border text-left transition-all duration-500 group ${profile.dietPreference === d
-                                                    ? 'bg-gray-900 border-gray-900 text-white shadow-xl rotate-1 scale-[1.02]'
-                                                    : 'bg-white border-gray-100 text-gray-400 hover:border-gray-900/30'
+                                                ? 'bg-gray-900 border-gray-900 text-white shadow-xl rotate-1 scale-[1.02]'
+                                                : 'bg-white border-gray-100 text-gray-400 hover:border-gray-900/30'
                                                 }`}
                                         >
                                             <div className="flex items-center justify-between">
