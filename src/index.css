@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 14.4px;
+  /* Mimics 90% zoom (0.9 * 16px) */
+  line-height: 1.6;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: #1a1a1a;
+  background-color: #fdfdfd;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #fdfdfd;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease;
+}
+
+#root {
+  width: 100%;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Simple card utility */
+.glass-card {
+  background: #f4f4f4;
+  border: 1px solid #e0e0e0;
+  border-radius: 1rem;
+}
+
+.glass-card:hover {
+  background: #ebebeb;
+  border: 1px solid #d0d0d0;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.logo-font {
+  font-family: 'Pacifico', cursive;
+}
+
+/* Expansion Utilities */
+
+.max-w-wide {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Atmospheric Elements */
+.atmospheric-text {
+  position: absolute;
+  font-size: 20rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.012);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+.floating-decor {
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-30px) rotate(5deg);
+  }
+}
+
+.section-divider {
+  width: 1px;
+  height: 100px;
+  background: linear-gradient(180deg, transparent, rgba(249, 115, 22, 0.2), transparent);
+  margin: 0 auto;
+}
+
+.luxury-blur {
+  background: radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.03) 0%, transparent 70%);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

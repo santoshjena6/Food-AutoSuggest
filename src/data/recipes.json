@@ -1,0 +1,1019 @@
+[
+    {
+        "id": 1,
+        "name": "Veg Noodles",
+        "mealType": "Dinner",
+        "diet": "Vegetarian",
+        "cuisine": "Chinese",
+        "cookTime": 20,
+        "rating": 4.8,
+        "image": "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "20 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "350 kcal",
+            "protein": "12g",
+            "carbs": "55g",
+            "fat": "8g"
+        },
+        "ingredients": [
+            "Noodles",
+            "Cabbage",
+            "Carrots",
+            "Capsicum",
+            "Soy Sauce",
+            "Oil",
+            "Garlic"
+        ],
+        "instructions": [
+            "Boil noodles until tender and drain.",
+            "Heat oil in a wok and sauté garlic.",
+            "Add vegetables and stir-fry on high heat.",
+            "Toss in noodles with sauces."
+        ],
+        "reviews": [
+            {
+                "name": "Aria",
+                "comment": "Perfectly balanced!",
+                "rating": 5
+            },
+            {
+                "name": "Leo",
+                "comment": "Very easy to follow.",
+                "rating": 4
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Chili Garlic Noodles",
+        "mealType": "Dinner",
+        "diet": "Vegan",
+        "cuisine": "Chinese",
+        "cookTime": 25,
+        "rating": 4.9,
+        "image": "https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "25 mins",
+        "difficulty": "Medium",
+        "nutrition": {
+            "calories": "420 kcal",
+            "protein": "10g",
+            "carbs": "60g",
+            "fat": "14g"
+        },
+        "ingredients": [
+            "Noodles",
+            "Chili",
+            "Garlic",
+            "Soy Sauce",
+            "Oil",
+            "Red Chili Flakes"
+        ],
+        "instructions": [
+            "Cook noodles and set aside.",
+            "Heat oil and sauté minced garlic.",
+            "Add chili flakes and soy sauce.",
+            "Toss in noodles and serve hot."
+        ],
+        "reviews": [
+            {
+                "name": "Zoe",
+                "comment": "Spicy and addictive!",
+                "rating": 5
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Fried Rice",
+        "mealType": "Lunch",
+        "diet": "Vegetarian",
+        "cuisine": "Chinese",
+        "cookTime": 15,
+        "rating": 4.7,
+        "image": "/images/fried-rice.png",
+        "prepTime": "15 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "380 kcal",
+            "protein": "9g",
+            "carbs": "52g",
+            "fat": "10g"
+        },
+        "ingredients": [
+            "Rice",
+            "Green Peas",
+            "Carrots",
+            "Egg",
+            "Soy Sauce",
+            "Oil",
+            "Garlic"
+        ],
+        "instructions": [
+            "Sauté vegetables in a pan.",
+            "Scramble egg on one side.",
+            "Add chilled cooked rice and sauces.",
+            "Stir-fry on high heat."
+        ],
+        "reviews": [
+            {
+                "name": "Sam",
+                "comment": "Better than takeout!",
+                "rating": 5
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Vegetable Stir Fry",
+        "mealType": "Lunch",
+        "diet": "Vegan",
+        "cuisine": "Continental",
+        "cookTime": 15,
+        "rating": 4.6,
+        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "15 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "250 kcal",
+            "protein": "8g",
+            "carbs": "20g",
+            "fat": "12g"
+        },
+        "ingredients": [
+            "Capsicum",
+            "Broccoli",
+            "Carrots",
+            "Mushroom",
+            "Soy Sauce",
+            "Cornstarch",
+            "Garlic",
+            "Ginger"
+        ],
+        "instructions": [
+            "Whisk soy sauce, cornstarch, and ginger.",
+            "Stir-fry the vegetables until crisp-tender.",
+            "Pour the sauce and toss."
+        ],
+        "reviews": [
+            {
+                "name": "Eva",
+                "comment": "Healthy and quick.",
+                "rating": 4
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Fruit & Nut Granola",
+        "mealType": "Breakfast",
+        "diet": "Gluten-Free",
+        "cuisine": "Continental",
+        "cookTime": 10,
+        "rating": 4.5,
+        "image": "/images/fruit-nut-granola.png",
+        "prepTime": "10 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "310 kcal",
+            "protein": "7g",
+            "carbs": "40g",
+            "fat": "15g"
+        },
+        "ingredients": [
+            "Oats",
+            "Almonds",
+            "Walnuts",
+            "Honey",
+            "Banana",
+            "Dried Fruits"
+        ],
+        "instructions": [
+            "Mix oats and nuts.",
+            "Drizzle honey and toss.",
+            "Serve with yogurt or milk."
+        ],
+        "reviews": [
+            {
+                "name": "Milo",
+                "comment": "My morning favorite.",
+                "rating": 5
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Avocado Toast",
+        "mealType": "Breakfast",
+        "diet": "Vegan",
+        "cuisine": "Continental",
+        "cookTime": 5,
+        "rating": 4.9,
+        "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "5 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "280 kcal",
+            "protein": "6g",
+            "carbs": "25g",
+            "fat": "18g"
+        },
+        "ingredients": [
+            "Bread",
+            "Avocado",
+            "Lemon",
+            "Salt",
+            "Pepper",
+            "Olive Oil"
+        ],
+        "instructions": [
+            "Toast the bread.",
+            "Mash avocado with lemon, salt and pepper.",
+            "Spread on toast and drizzle with olive oil."
+        ],
+        "reviews": [
+            {
+                "name": "Luna",
+                "comment": "Simple perfection.",
+                "rating": 5
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Classic Poha",
+        "mealType": "Breakfast",
+        "diet": "Vegetarian",
+        "cuisine": "Indian",
+        "cookTime": 15,
+        "rating": 4.8,
+        "image": "https://images.unsplash.com/photo-1632733711679-52923bc96939?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "15 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "210 kcal",
+            "protein": "4g",
+            "carbs": "42g",
+            "fat": "3g"
+        },
+        "ingredients": [
+            "Poha",
+            "Peanuts",
+            "Green Chili",
+            "Turmeric",
+            "Mustard Seeds",
+            "Onion",
+            "Lemon",
+            "Oil"
+        ],
+        "instructions": [
+            "Rinse poha and drain.",
+            "Sauté mustard seeds, peanuts, chili and onion.",
+            "Add turmeric and salt, toss in poha.",
+            "Garnish with lemon juice and coriander."
+        ],
+        "reviews": [
+            {
+                "name": "Rohan",
+                "comment": "Authentic and light.",
+                "rating": 5
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Paneer Butter Masala",
+        "mealType": "Dinner",
+        "diet": "Vegetarian",
+        "cuisine": "Indian",
+        "cookTime": 40,
+        "rating": 4.9,
+        "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "40 mins",
+        "difficulty": "Medium",
+        "nutrition": {
+            "calories": "520 kcal",
+            "protein": "18g",
+            "carbs": "12g",
+            "fat": "45g"
+        },
+        "ingredients": [
+            "Paneer",
+            "Tomato",
+            "Cream",
+            "Butter",
+            "Onion",
+            "Garlic",
+            "Ginger",
+            "Garam Masala",
+            "Chili"
+        ],
+        "instructions": [
+            "Make gravy with tomatoes, onion and spices.",
+            "Add butter and cream for richness.",
+            "Toss in paneer cubes.",
+            "Simmer for 10 minutes."
+        ],
+        "reviews": []
+    },
+    {
+        "id": 9,
+        "name": "Dal Tadka",
+        "mealType": "Lunch",
+        "diet": "Vegetarian",
+        "cuisine": "Indian",
+        "cookTime": 30,
+        "rating": 4.8,
+        "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "30 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "280 kcal",
+            "protein": "14g",
+            "carbs": "38g",
+            "fat": "8g"
+        },
+        "ingredients": [
+            "Dal",
+            "Toor Dal",
+            "Onion",
+            "Tomato",
+            "Garlic",
+            "Ginger",
+            "Turmeric",
+            "Cumin",
+            "Ghee",
+            "Chili",
+            "Coriander"
+        ],
+        "instructions": [
+            "Pressure cook dal with turmeric until soft.",
+            "Heat ghee and sauté cumin, garlic and onion.",
+            "Add tomatoes and cook until soft.",
+            "Mix in cooked dal and simmer.",
+            "Prepare a hot ghee tadka with cumin and chili, pour over dal."
+        ],
+        "reviews": [
+            {
+                "name": "Priya",
+                "comment": "Tastes exactly like mom's!",
+                "rating": 5
+            },
+            {
+                "name": "Arjun",
+                "comment": "Perfect with rice and roti.",
+                "rating": 5
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Dal Khichdi",
+        "mealType": "Dinner",
+        "diet": "Vegetarian",
+        "cuisine": "Indian",
+        "cookTime": 25,
+        "rating": 4.7,
+        "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "25 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "320 kcal",
+            "protein": "12g",
+            "carbs": "55g",
+            "fat": "9g"
+        },
+        "ingredients": [
+            "Rice",
+            "Dal",
+            "Moong Dal",
+            "Turmeric",
+            "Cumin",
+            "Ghee",
+            "Onion",
+            "Ginger",
+            "Salt"
+        ],
+        "instructions": [
+            "Wash and soak rice and dal together for 20 mins.",
+            "Heat ghee in a pressure cooker and sauté cumin and onion.",
+            "Add ginger, turmeric, rice and dal.",
+            "Add water (3x) and pressure cook for 3-4 whistles.",
+            "Serve hot with ghee on top."
+        ],
+        "reviews": [
+            {
+                "name": "Meera",
+                "comment": "Comfort food at its best!",
+                "rating": 5
+            },
+            {
+                "name": "Dev",
+                "comment": "Perfect for sick days.",
+                "rating": 4
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Banana Smoothie",
+        "mealType": "Breakfast",
+        "diet": "Vegetarian",
+        "cuisine": "Continental",
+        "cookTime": 5,
+        "rating": 4.6,
+        "image": "https://images.unsplash.com/photo-1553530666-ba11a90bb0af?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "5 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "210 kcal",
+            "protein": "6g",
+            "carbs": "42g",
+            "fat": "4g"
+        },
+        "ingredients": [
+            "Banana",
+            "Milk",
+            "Honey",
+            "Vanilla Extract",
+            "Ice"
+        ],
+        "instructions": [
+            "Peel and slice bananas.",
+            "Add banana, milk, honey and ice to blender.",
+            "Blend until smooth.",
+            "Pour into glass and serve immediately."
+        ],
+        "reviews": [
+            {
+                "name": "Naina",
+                "comment": "So creamy and filling!",
+                "rating": 5
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Banana Pancakes",
+        "mealType": "Breakfast",
+        "diet": "Vegetarian",
+        "cuisine": "Continental",
+        "cookTime": 15,
+        "rating": 4.5,
+        "image": "https://images.unsplash.com/photo-1541288097308-7b8842a8e9b0?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "15 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "290 kcal",
+            "protein": "8g",
+            "carbs": "48g",
+            "fat": "7g"
+        },
+        "ingredients": [
+            "Banana",
+            "Egg",
+            "Flour",
+            "Milk",
+            "Butter",
+            "Honey",
+            "Baking Powder"
+        ],
+        "instructions": [
+            "Mash banana in a bowl.",
+            "Whisk in egg, milk and flour to form a smooth batter.",
+            "Heat butter in a pan on medium heat.",
+            "Pour batter and cook until bubbles form, then flip.",
+            "Serve with honey or maple syrup."
+        ],
+        "reviews": [
+            {
+                "name": "Kim",
+                "comment": "My kids absolutely love these!",
+                "rating": 5
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Aloo Paratha",
+        "mealType": "Breakfast",
+        "diet": "Vegetarian",
+        "cuisine": "Indian",
+        "cookTime": 30,
+        "rating": 4.9,
+        "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "30 mins",
+        "difficulty": "Medium",
+        "nutrition": {
+            "calories": "380 kcal",
+            "protein": "9g",
+            "carbs": "58g",
+            "fat": "14g"
+        },
+        "ingredients": [
+            "Potato",
+            "Atta",
+            "Whole Wheat Flour",
+            "Onion",
+            "Green Chili",
+            "Cumin",
+            "Coriander",
+            "Ghee",
+            "Butter",
+            "Salt"
+        ],
+        "instructions": [
+            "Boil and mash potatoes with onion, chili and spices.",
+            "Knead atta with water to make soft dough.",
+            "Stuff dough balls with potato filling.",
+            "Roll into parathas and cook on a hot tawa with ghee.",
+            "Serve hot with curd and pickle."
+        ],
+        "reviews": [
+            {
+                "name": "Simran",
+                "comment": "Exactly like dhaba style!",
+                "rating": 5
+            },
+            {
+                "name": "Raj",
+                "comment": "Perfect Sunday breakfast.",
+                "rating": 5
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Egg Bhurji",
+        "mealType": "Breakfast",
+        "diet": "Vegetarian",
+        "cuisine": "Indian",
+        "cookTime": 10,
+        "rating": 4.7,
+        "image": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "10 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "240 kcal",
+            "protein": "16g",
+            "carbs": "8g",
+            "fat": "16g"
+        },
+        "ingredients": [
+            "Egg",
+            "Onion",
+            "Tomato",
+            "Green Chili",
+            "Cumin",
+            "Turmeric",
+            "Oil",
+            "Salt",
+            "Coriander"
+        ],
+        "instructions": [
+            "Heat oil and sauté cumin, onion and chili.",
+            "Add tomatoes and cook until soft.",
+            "Add beaten eggs and cook on medium heat.",
+            "Scramble continuously until fully cooked.",
+            "Garnish with coriander and serve with bread."
+        ],
+        "reviews": [
+            {
+                "name": "Amit",
+                "comment": "Quick and filling!",
+                "rating": 5
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Rajma",
+        "mealType": "Lunch",
+        "diet": "Vegan",
+        "cuisine": "Indian",
+        "cookTime": 45,
+        "rating": 4.8,
+        "image": "https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "45 mins",
+        "difficulty": "Medium",
+        "nutrition": {
+            "calories": "360 kcal",
+            "protein": "18g",
+            "carbs": "55g",
+            "fat": "6g"
+        },
+        "ingredients": [
+            "Kidney Beans",
+            "Rajma",
+            "Onion",
+            "Tomato",
+            "Garlic",
+            "Ginger",
+            "Garam Masala",
+            "Cumin",
+            "Oil",
+            "Chili"
+        ],
+        "instructions": [
+            "Soak rajma overnight and pressure cook until tender.",
+            "Sauté onion, garlic and ginger in oil.",
+            "Add tomatoes and spices, cook until masala is ready.",
+            "Add cooked rajma and simmer for 20 minutes.",
+            "Serve hot with steamed rice."
+        ],
+        "reviews": [
+            {
+                "name": "Kavya",
+                "comment": "Comfort food perfection.",
+                "rating": 5
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Chole Bhature",
+        "mealType": "Lunch",
+        "diet": "Vegan",
+        "cuisine": "Indian",
+        "cookTime": 40,
+        "rating": 4.9,
+        "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "40 mins",
+        "difficulty": "Medium",
+        "nutrition": {
+            "calories": "580 kcal",
+            "protein": "20g",
+            "carbs": "70g",
+            "fat": "24g"
+        },
+        "ingredients": [
+            "Chickpeas",
+            "Chana",
+            "Onion",
+            "Tomato",
+            "Garlic",
+            "Ginger",
+            "Chana Masala",
+            "Oil",
+            "Flour",
+            "Maida"
+        ],
+        "instructions": [
+            "Pressure cook soaked chickpeas until tender.",
+            "Make spicy chole gravy with onion-tomato masala.",
+            "Knead maida dough and rest for 30 mins.",
+            "Roll and deep fry bhaturas until puffed.",
+            "Serve chole with hot bhature and raw onion."
+        ],
+        "reviews": [
+            {
+                "name": "Harish",
+                "comment": "Just like Old Delhi!",
+                "rating": 5
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Upma",
+        "mealType": "Breakfast",
+        "diet": "Vegetarian",
+        "cuisine": "Indian",
+        "cookTime": 20,
+        "rating": 4.4,
+        "image": "https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "20 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "220 kcal",
+            "protein": "6g",
+            "carbs": "38g",
+            "fat": "7g"
+        },
+        "ingredients": [
+            "Semolina",
+            "Rava",
+            "Onion",
+            "Green Chili",
+            "Mustard Seeds",
+            "Curry Leaves",
+            "Carrot",
+            "Peas",
+            "Ginger",
+            "Oil"
+        ],
+        "instructions": [
+            "Dry roast semolina until golden and set aside.",
+            "Temper mustard seeds, curry leaves, chili and onion.",
+            "Add vegetables and sauté briefly.",
+            "Add 2.5 cups hot water for every cup rava.",
+            "Stir in rava quickly to avoid lumps, cover and cook."
+        ],
+        "reviews": [
+            {
+                "name": "Lakshmi",
+                "comment": "Classic South Indian breakfast.",
+                "rating": 4
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Bread Omelette",
+        "mealType": "Breakfast",
+        "diet": "Vegetarian",
+        "cuisine": "Continental",
+        "cookTime": 10,
+        "rating": 4.5,
+        "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "10 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "310 kcal",
+            "protein": "14g",
+            "carbs": "30g",
+            "fat": "14g"
+        },
+        "ingredients": [
+            "Bread",
+            "Egg",
+            "Onion",
+            "Tomato",
+            "Green Chili",
+            "Butter",
+            "Salt",
+            "Pepper"
+        ],
+        "instructions": [
+            "Beat eggs with onion, tomato, chili, salt and pepper.",
+            "Melt butter in a pan on medium flame.",
+            "Pour egg mix and cook until half set.",
+            "Place bread slice on egg and flip.",
+            "Serve hot with ketchup."
+        ],
+        "reviews": [
+            {
+                "name": "Rohan",
+                "comment": "Street food classic!",
+                "rating": 5
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "name": "Palak Paneer",
+        "mealType": "Dinner",
+        "diet": "Vegetarian",
+        "cuisine": "Indian",
+        "cookTime": 30,
+        "rating": 4.8,
+        "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "30 mins",
+        "difficulty": "Medium",
+        "nutrition": {
+            "calories": "380 kcal",
+            "protein": "20g",
+            "carbs": "14g",
+            "fat": "28g"
+        },
+        "ingredients": [
+            "Paneer",
+            "Spinach",
+            "Palak",
+            "Onion",
+            "Tomato",
+            "Garlic",
+            "Ginger",
+            "Cream",
+            "Garam Masala",
+            "Ghee"
+        ],
+        "instructions": [
+            "Blanch spinach and blend to a smooth puree.",
+            "Sauté onion, garlic and ginger in ghee.",
+            "Add tomatoes and spices and cook.",
+            "Add spinach puree and simmer.",
+            "Add paneer cubes and cream, cook for 5 mins."
+        ],
+        "reviews": [
+            {
+                "name": "Sunita",
+                "comment": "Restaurant quality at home.",
+                "rating": 5
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Masala Chai",
+        "mealType": "Breakfast",
+        "diet": "Vegetarian",
+        "cuisine": "Indian",
+        "cookTime": 10,
+        "rating": 4.9,
+        "image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "10 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "80 kcal",
+            "protein": "3g",
+            "carbs": "12g",
+            "fat": "2g"
+        },
+        "ingredients": [
+            "Milk",
+            "Tea",
+            "Ginger",
+            "Cardamom",
+            "Cinnamon",
+            "Sugar",
+            "Water"
+        ],
+        "instructions": [
+            "Crush ginger and cardamom.",
+            "Boil water with spices for 2 mins.",
+            "Add tea and milk.",
+            "Simmer on low flame for 3-4 mins.",
+            "Strain and serve hot."
+        ],
+        "reviews": [
+            {
+                "name": "Everyone",
+                "comment": "The ultimate comfort drink.",
+                "rating": 5
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "name": "Aloo Sabzi",
+        "mealType": "Lunch",
+        "diet": "Vegan",
+        "cuisine": "Indian",
+        "cookTime": 20,
+        "rating": 4.5,
+        "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "20 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "200 kcal",
+            "protein": "4g",
+            "carbs": "36g",
+            "fat": "6g"
+        },
+        "ingredients": [
+            "Potato",
+            "Aloo",
+            "Onion",
+            "Tomato",
+            "Turmeric",
+            "Cumin",
+            "Mustard Seeds",
+            "Oil",
+            "Chili",
+            "Coriander"
+        ],
+        "instructions": [
+            "Boil or fry cubed potatoes until golden.",
+            "Temper cumin and mustard seeds in oil.",
+            "Add onion, tomato and spices.",
+            "Toss in potatoes and cook for 5 mins.",
+            "Garnish with coriander."
+        ],
+        "reviews": [
+            {
+                "name": "Gaurav",
+                "comment": "Simple and delicious with roti.",
+                "rating": 4
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "name": "Vegetable Pulao",
+        "mealType": "Lunch",
+        "diet": "Vegetarian",
+        "cuisine": "Indian",
+        "cookTime": 30,
+        "rating": 4.6,
+        "image": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "30 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "310 kcal",
+            "protein": "7g",
+            "carbs": "55g",
+            "fat": "8g"
+        },
+        "ingredients": [
+            "Rice",
+            "Basmati Rice",
+            "Peas",
+            "Carrot",
+            "Beans",
+            "Onion",
+            "Ginger",
+            "Garlic",
+            "Ghee",
+            "Bay Leaf",
+            "Cardamom",
+            "Cloves"
+        ],
+        "instructions": [
+            "Wash and soak basmati rice for 20 mins.",
+            "Heat ghee and sauté whole spices and onion.",
+            "Add vegetables and sauté briefly.",
+            "Add rice and water (1:1.75 ratio).",
+            "Cook on low flame until rice is fluffy."
+        ],
+        "reviews": [
+            {
+                "name": "Anjali",
+                "comment": "Fragrant and perfectly cooked.",
+                "rating": 5
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "name": "Banana Oats Porridge",
+        "mealType": "Breakfast",
+        "diet": "Vegetarian",
+        "cuisine": "Continental",
+        "cookTime": 10,
+        "rating": 4.4,
+        "image": "https://images.unsplash.com/photo-1495214783159-3503fd1b572d?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "10 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "250 kcal",
+            "protein": "8g",
+            "carbs": "45g",
+            "fat": "5g"
+        },
+        "ingredients": [
+            "Banana",
+            "Oats",
+            "Milk",
+            "Honey",
+            "Cinnamon",
+            "Walnuts"
+        ],
+        "instructions": [
+            "Cook oats in milk until creamy.",
+            "Slice banana and place on top.",
+            "Drizzle with honey and sprinkle cinnamon.",
+            "Top with crushed walnuts."
+        ],
+        "reviews": [
+            {
+                "name": "Sia",
+                "comment": "Healthy start to the day.",
+                "rating": 4
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "name": "Moong Dal Cheela",
+        "mealType": "Breakfast",
+        "diet": "Vegan",
+        "cuisine": "Indian",
+        "cookTime": 20,
+        "rating": 4.7,
+        "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=800",
+        "prepTime": "20 mins",
+        "difficulty": "Easy",
+        "nutrition": {
+            "calories": "180 kcal",
+            "protein": "12g",
+            "carbs": "28g",
+            "fat": "3g"
+        },
+        "ingredients": [
+            "Moong Dal",
+            "Dal",
+            "Onion",
+            "Green Chili",
+            "Ginger",
+            "Cumin",
+            "Turmeric",
+            "Oil",
+            "Coriander"
+        ],
+        "instructions": [
+            "Soak moong dal for 2 hours and blend to smooth batter.",
+            "Add onion, chili, ginger and spices to batter.",
+            "Pour batter on a hot oiled pan like a dosa.",
+            "Cook until edges crisp, flip and cook other side.",
+            "Serve with green chutney."
+        ],
+        "reviews": [
+            {
+                "name": "Pooja",
+                "comment": "Protein-packed and delicious!",
+                "rating": 5
+            }
+        ]
+    }
+]
