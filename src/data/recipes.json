@@ -164,44 +164,6 @@
         ]
     },
     {
-        "id": 5,
-        "name": "Fruit & Nut Granola",
-        "mealType": "Breakfast",
-        "diet": "Gluten-Free",
-        "cuisine": "Continental",
-        "cookTime": 10,
-        "rating": 4.5,
-        "image": "https://images.unsplash.com/photo-1494597564530-8922573d7ec7?auto=format&fit=crop&q=80&w=800",
-        "prepTime": "10 mins",
-        "difficulty": "Easy",
-        "nutrition": {
-            "calories": "310 kcal",
-            "protein": "7g",
-            "carbs": "40g",
-            "fat": "15g"
-        },
-        "ingredients": [
-            "Oats",
-            "Almonds",
-            "Walnuts",
-            "Honey",
-            "Banana",
-            "Dried Fruits"
-        ],
-        "instructions": [
-            "Mix oats and nuts.",
-            "Drizzle honey and toss.",
-            "Serve with yogurt or milk."
-        ],
-        "reviews": [
-            {
-                "name": "Milo",
-                "comment": "My morning favorite.",
-                "rating": 5
-            }
-        ]
-    },
-    {
         "id": 6,
         "name": "Avocado Toast",
         "mealType": "Breakfast",
@@ -235,47 +197,6 @@
             {
                 "name": "Luna",
                 "comment": "Simple perfection.",
-                "rating": 5
-            }
-        ]
-    },
-    {
-        "id": 7,
-        "name": "Classic Poha",
-        "mealType": "Breakfast",
-        "diet": "Vegetarian",
-        "cuisine": "Indian",
-        "cookTime": 15,
-        "rating": 4.8,
-        "image": "https://images.unsplash.com/photo-1589302168068-144664d93dc0?auto=format&fit=crop&q=80&w=800",
-        "prepTime": "15 mins",
-        "difficulty": "Easy",
-        "nutrition": {
-            "calories": "210 kcal",
-            "protein": "4g",
-            "carbs": "42g",
-            "fat": "3g"
-        },
-        "ingredients": [
-            "Poha",
-            "Peanuts",
-            "Green Chili",
-            "Turmeric",
-            "Mustard Seeds",
-            "Onion",
-            "Lemon",
-            "Oil"
-        ],
-        "instructions": [
-            "Rinse poha and drain.",
-            "Sauté mustard seeds, peanuts, chili and onion.",
-            "Add turmeric and salt, toss in poha.",
-            "Garnish with lemon juice and coriander."
-        ],
-        "reviews": [
-            {
-                "name": "Rohan",
-                "comment": "Authentic and light.",
                 "rating": 5
             }
         ]
@@ -411,44 +332,6 @@
                 "name": "Dev",
                 "comment": "Perfect for sick days.",
                 "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 11,
-        "name": "Banana Smoothie",
-        "mealType": "Breakfast",
-        "diet": "Vegetarian",
-        "cuisine": "Continental",
-        "cookTime": 5,
-        "rating": 4.6,
-        "image": "https://images.unsplash.com/photo-1553530666-ba11a90bb0af?auto=format&fit=crop&q=80&w=800",
-        "prepTime": "5 mins",
-        "difficulty": "Easy",
-        "nutrition": {
-            "calories": "210 kcal",
-            "protein": "6g",
-            "carbs": "42g",
-            "fat": "4g"
-        },
-        "ingredients": [
-            "Banana",
-            "Milk",
-            "Honey",
-            "Vanilla Extract",
-            "Ice"
-        ],
-        "instructions": [
-            "Peel and slice bananas.",
-            "Add banana, milk, honey and ice to blender.",
-            "Blend until smooth.",
-            "Pour into glass and serve immediately."
-        ],
-        "reviews": [
-            {
-                "name": "Naina",
-                "comment": "So creamy and filling!",
-                "rating": 5
             }
         ]
     },
@@ -714,48 +597,6 @@
                 "name": "Lakshmi",
                 "comment": "Classic South Indian breakfast.",
                 "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 18,
-        "name": "Bread Omelette",
-        "mealType": "Breakfast",
-        "diet": "Vegetarian",
-        "cuisine": "Continental",
-        "cookTime": 10,
-        "rating": 4.5,
-        "image": "https://images.unsplash.com/photo-1504309325026-c73362174092?auto=format&fit=crop&q=80&w=800",
-        "prepTime": "10 mins",
-        "difficulty": "Easy",
-        "nutrition": {
-            "calories": "310 kcal",
-            "protein": "14g",
-            "carbs": "30g",
-            "fat": "14g"
-        },
-        "ingredients": [
-            "Bread",
-            "Egg",
-            "Onion",
-            "Tomato",
-            "Green Chili",
-            "Butter",
-            "Salt",
-            "Pepper"
-        ],
-        "instructions": [
-            "Beat eggs with onion, tomato, chili, salt and pepper.",
-            "Melt butter in a pan on medium flame.",
-            "Pour egg mix and cook until half set.",
-            "Place bread slice on egg and flip.",
-            "Serve hot with ketchup."
-        ],
-        "reviews": [
-            {
-                "name": "Rohan",
-                "comment": "Street food classic!",
-                "rating": 5
             }
         ]
     },

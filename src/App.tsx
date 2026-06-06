@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ScrollyCanvas from './components/animations/ScrollyCanvas';
+import FloatingPlate from './components/animations/FloatingPlate';
+import About from './components/About';
 import Dishes from './components/Dishes';
 import SearchRecipes from './components/SearchRecipes';
 import UserProfile from './components/UserProfile';
@@ -55,6 +57,11 @@ const App: React.FC = () => {
       <section className="relative z-10">
         <ScrollyCanvas />
       </section>
+
+      {/* Flying Plate Transition */}
+      <FloatingPlate />
+      {/* About Section - Integrated with the transition */}
+      <About />
 
       {/* Signature Dishes - Higher z-index to cover fixed hero elements */}
       <section id="dishes" className="relative z-30 py-20 bg-white">
@@ -113,11 +120,14 @@ const App: React.FC = () => {
         <UserProfile />
       </section>
 
-      {/* Newsletter / CTA Section */}
+      {/* Premium CTA Section */}
       <section className="relative z-30 py-40 bg-white px-6">
-        <div className="max-w-wide mx-auto">
-          <div className="noise-texture premium-glass p-16 md:p-32 rounded-[4rem] text-center relative overflow-hidden group border border-gray-100 shadow-xl">
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/[0.03] to-transparent" />
+        <div className="max-w-7xl mx-auto">
+          <div className="relative p-12 md:p-24 rounded-[3rem] text-center overflow-hidden bg-white border border-gray-100 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.03)]">
+            {/* Subtle background texture or detail */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gray-900/[0.01] rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -125,25 +135,30 @@ const App: React.FC = () => {
               viewport={{ once: true }}
               className="relative z-10"
             >
-              <ChefHat size={48} className="mx-auto text-orange-500 mb-10" />
-              <h2 className="text-5xl md:text-7xl mb-8 tracking-tighter text-gray-900" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                Join the Culinary Vanguard
+              <div className="flex flex-col items-center gap-6 mb-12">
+                <ChefHat size={32} className="text-orange-500/40" />
+                <div className="h-px w-20 bg-orange-200" />
+              </div>
+              
+              <h2 className="text-5xl md:text-7xl mb-12 tracking-tighter text-gray-900" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400 }}>
+                Join the <span className="italic text-gray-400">Culinary Vanguard</span>
               </h2>
-              <p className="text-gray-500 text-lg md:text-xl font-light max-w-2xl mx-auto mb-16 leading-relaxed">
-                Receive curated inspiration, signature techniques, and early access to archival recipes. Pure artistry, delivered monthly.
+              
+              <p className="text-gray-400 text-sm font-bold uppercase tracking-[0.4em] max-w-xl mx-auto mb-20 leading-loose">
+                Curated inspiration, signature techniques, and early access to archival recipes. Pure artistry, delivered monthly.
               </p>
 
-              <div className="flex flex-col md:flex-row items-center justify-center gap-6 max-w-2xl mx-auto">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-2xl mx-auto mb-10">
                 <input
                   type="email"
                   placeholder="Enter your digital letterbox"
-                  className="w-full md:flex-grow bg-white border border-gray-100 rounded-3xl py-6 px-10 text-gray-900 focus:outline-none focus:border-orange-500 transition-all font-medium placeholder:text-gray-300 shadow-sm"
+                  className="w-full md:flex-grow bg-gray-50/50 border border-gray-100 rounded-2xl py-6 px-10 text-gray-900 focus:outline-none focus:border-orange-200 transition-all font-light placeholder:text-gray-300"
                 />
-                <button className="w-full md:w-auto px-12 py-6 bg-gray-900 text-white rounded-3xl font-black uppercase tracking-[0.2em] text-[11px] hover:bg-orange-500 transition-all shadow-xl active:scale-95">
+                <button className="w-full md:w-auto px-12 py-6 bg-gray-900 text-white rounded-2xl font-black uppercase tracking-[0.3em] text-[10px] hover:bg-orange-500 transition-all shadow-xl active:scale-95">
                   Subscribe
                 </button>
               </div>
-              <p className="mt-8 text-[11px] font-bold uppercase tracking-widest text-gray-300">Privacy prioritized. No noise, just essence.</p>
+              <p className="text-[9px] font-black uppercase tracking-[0.6em] text-gray-300">Privacy prioritized. No noise, just essence.</p>
             </motion.div>
           </div>
         </div>

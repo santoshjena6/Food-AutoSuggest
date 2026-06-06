@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
+import { useScroll, useTransform, useMotionValueEvent, motion } from 'framer-motion';
 import Overlay from '../Overlay';
 
 const frameCount = 120;
@@ -16,7 +16,9 @@ const ScrollyCanvas: React.FC = () => {
     });
 
     // Map scroll progress to frame index
-    const frameIndex = useTransform(scrollYProgress, [0, 1], [0, frameCount - 1]);
+    // 500 / 660 ≈ 0.758
+    const frameIndex = useTransform(scrollYProgress, [0, 0.758, 1], [0, frameCount - 1, frameCount - 1]);
+    const canvasOpacity = useTransform(scrollYProgress, [0, 0.98, 1], [1, 1, 0]);
 
     useEffect(() => {
         const preloadImages = async () => {
@@ -100,9 +102,10 @@ const ScrollyCanvas: React.FC = () => {
     }, [images, isLoaded]);
 
     return (
-        <div ref={containerRef} className="relative h-[500vh] w-full">
+        <div ref={containerRef} className="relative h-[660vh] w-full">
             <div className="sticky top-0 left-0 h-screen w-full overflow-hidden">
-                <canvas
+                <motion.canvas
+                    style={{ opacity: canvasOpacity }}
                     ref={canvasRef}
                     className="w-full h-full"
                 />
