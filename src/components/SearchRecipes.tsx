@@ -144,7 +144,7 @@ const SearchRecipes: React.FC = () => {
     const [selectedCuisine, setSelectedCuisine] = useState("All");
     const [selectedTimeLimit, setSelectedTimeLimit] = useState(999);
     const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
-    const [avoidedIngredients, setAvoidedIngredients] = useState<string[]>([]);
+    const avoidedIngredients: string[] = [];
 
     const filteredRecipes = useMemo(() => {
         return (recipesData as Recipe[]).filter(recipe => {
@@ -159,7 +159,7 @@ const SearchRecipes: React.FC = () => {
             const hasAvoided = avoidedIngredients.some(a => recipe.ingredients.some(i => i.toLowerCase().includes(a.toLowerCase())));
             return matchesSearch && matchesMeal && matchesDiet && matchesCuisine && matchesTime && !hasAvoided;
         });
-    }, [searchQuery, searchMode, selectedMealType, selectedDiet, selectedCuisine, selectedTimeLimit, avoidedIngredients]);
+    }, [searchQuery, searchMode, selectedMealType, selectedDiet, selectedCuisine, selectedTimeLimit]);
 
     return (
         <div id="recipe-search" className="w-full bg-[#f9f8f6] py-32 px-6 md:px-12 relative overflow-hidden">

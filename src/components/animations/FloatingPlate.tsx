@@ -48,7 +48,7 @@ const FloatingPlate: React.FC = () => {
     // Cinematic tilts and spinning
     const rotateX = useTransform(progress, [0, 0.2, 1], [0, 25, 0]);
     const rotateY = useTransform(progress, [0, 0.2, 1], [0, -15, 0]);
-    const rotateZ = useTransform(progress, [0, 1], [-45, 0]); // Subtle start rotation
+
     const rotate = useTransform(progress, [0, 1], [0, 360]); // Full spin animation
     const z = useTransform(progress, [0, 0.4, 1], [0, 250, 0]);
 
